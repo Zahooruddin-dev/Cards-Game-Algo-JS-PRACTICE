@@ -26,15 +26,14 @@ async function handleClick() {
 newDeckBtn.addEventListener('click', handleClick);
 
 // Event listener for "Draw Cards" button
-drawCardBtn.addEventListener('click', () => {
+drawCardBtn.addEventListener('click',async () => {
     if (!deckId) {
         header.innerHTML = 'Please create a new deck first!';
         return;
     }
 
-    fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`)
-        .then((res) => res.json())
-        .then((data) => {
+    const res = await  fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`)
+    const data= await res.json()
             cardsContainer.children[0].innerHTML = `
                 <img src=${data.cards[0].image} class="card" />
             `;
@@ -61,7 +60,6 @@ drawCardBtn.addEventListener('click', () => {
                 drawCardBtn.addEventListener('click', handleClick);
             }
         });
-});
 
 // Function to calculate card values and determine the round winner
 function calculate(card1, card2) {
