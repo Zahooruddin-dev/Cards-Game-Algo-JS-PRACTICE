@@ -6,13 +6,16 @@
         <title>Cards</title>
     </head>
     <body>
-        <button id="new-deck">New Deck</button>
-        <h2 id="header"></h2>
-        <div id="cards">
-            <div class="card-slot"></div>
-            <div class="card-slot"></div>
-        </div>
-        <button id="draw-cards" class="draw">Draw</button>
-        <script src="app.js"></script>
+      <h3 id="card-left">Remaining Cards: 0</h3>
+      <button id="new-deck">New Deck</button>
+      <h2 id="header" class="header"></h2>
+      <div id="cards">
+          <div class="card-slot"></div>
+          <div class="card-slot"></div>
+      </div>
+      <button id="draw-cards" class="draw" disabled>Draw</button>
+      <h3 id="score">My score: </h3>
+
+      <script src="app.js"type='module'></script>
     </body>
 </html>
